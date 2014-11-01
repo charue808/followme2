@@ -1,0 +1,77 @@
+<head>
+  <title>Follow Me</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+  <div class="container">
+	<div class="col-md-6 col-md-offset-3">
+  		<img src="/image/FollowMEv1.png" class="img-responsive" alt="Responsive image"/>
+  	</div>	
+  		{{> content}}
+  </div>
+</body>
+
+<template name="content">
+  <div class="row"> 
+	<div class="col-md-6 col-md-offset-3">
+      <div class="well">
+	    {{#if currentUser}}
+			<h4>You've been added! Join the conversation with the official hashtag #DreamBigBuildNow!</h4>
+      {{else}}
+        <h4>Sign in with twitter to make it easier for event participants to follow you!</h4>
+           {{>loginButtons}}
+	    {{/if}}
+	  </div>
+		<table class="table">
+		  {{#each users}}
+			{{> user}}
+		  {{/each}}
+		</table> 
+    </div>
+
+		
+		  <div class="col-md-6 col-md-offset-3"> <hr />
+			<h5><small><p class="text-justify">
+	   Brought to you by <a href="http://twitter.com/protohubhnl">@ProtoHubHNL</a>, 
+	   inspired by <a href="http://twitter.com/SachaGreif">@SachaGreif</a>,
+	   built by <a href="http://twitter.com/thestarfoundry">@TheStarFoundry</a>
+			<br /><br />
+        </p></small></h5>
+        	
+          </div>   
+ 		
+	
+		<div class="col-md-6 col-md-offset-3">
+      <a class="twitter-hashtag-button"
+  href="https://www.twitter.com/intent/tweet?button_hashtag=DreamBigBuildNow"
+  data-related="twitter">
+Tweet #DreamBigBuildNow
+</a>
+   
+		  <div class="well">
+            <p class="text-justify">Enroll in the next Munch & Make class at Protohub <a target="_blank" class="btn btn-success" href="https://www.eventbrite.com/e/munch-and-make-tickets-13298990639">Sign Up Here!</a></p>
+          </div>
+        </div>
+
+  </div>
+</template>
+
+
+
+<template name="user">
+	<table class="table">
+		<tr>
+		  <td>
+			<a target="blank" href="http://twitter.com/{{services.twitter.screenName}}"><img src="{{services.twitter.profile_image_url}}"/> {{profile.name}}</a>
+    
+	
+   <iframe style ="width: 300px; height: 20px;" src="//platform.twitter.com/widgets/follow_button.html?screen_name={{services.twitter.screenName}}" frameborder="0" scrolling="no"></iframe>
+
+ 
+		  </td>
+		</tr>
+	</table>
+</template>
+
+           
