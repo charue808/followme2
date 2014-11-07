@@ -17,58 +17,39 @@
 	<div class="col-md-6 col-md-offset-3">
       <div class="well">
 	    {{#if currentUser}}
-			<h4>You've been added! Join the conversation with the official hashtag #DreamBigBuildNow!</h4>
+			<h4>You've been added! Join the conversation on twitter with the official hashtags for EdCamp 2014 - Honolulu:</h4>   
+         <a id="tweet1" class="twitter-hashtag-button" href="https://www.twitter.com/intent/tweet?button_hashtag=edcampHI" data-related="twitter">Tweet #edcampHI</a>
+         <a id="tweet2" class="twitter-hashtag-button" href="https://www.twitter.com/intent/tweet?button_hashtag=edcamp" data-related="twitter">Tweet #edcamp</a>      
       {{else}}
-        <h4>Sign in with twitter to make it easier for event participants to follow you!</h4>
+        <h4>Sign in with twitter to make it easier for EdCamp participants to follow you!</h4>
            {{>loginButtons}}
 	    {{/if}}
 	  </div>
 		<table class="table">
 		  {{#each users}}
-			{{> user}}
+			  {{> user}}
 		  {{/each}}
 		</table> 
-    </div>
-
-		
-		  <div class="col-md-6 col-md-offset-3"> <hr />
-			<h5><small><p class="text-justify">
-	   Brought to you by <a href="http://twitter.com/protohubhnl">@ProtoHubHNL</a>, 
-	   inspired by <a href="http://twitter.com/SachaGreif">@SachaGreif</a>,
-	   built by <a href="http://twitter.com/thestarfoundry">@TheStarFoundry</a>
-			<br /><br />
-        </p></small></h5>
-        	
-          </div>   
- 		
-	
+    </div>   
 		<div class="col-md-6 col-md-offset-3">
-      <a class="twitter-hashtag-button"
-  href="https://www.twitter.com/intent/tweet?button_hashtag=DreamBigBuildNow"
-  data-related="twitter">
-Tweet #DreamBigBuildNow
-</a>
-   
 		  <div class="well">
-            <p class="text-justify">Enroll in the next Munch & Make class at Protohub <a target="_blank" class="btn btn-success" href="https://www.eventbrite.com/e/munch-and-make-tickets-13298990639">Sign Up Here!</a></p>
-          </div>
-        </div>
-
+            <p class="text-justify">Follow us on Twitter to find out the latest news on upcoming workshops and classes to help you build the solution to a problem in your community!</p><a target="blank" href="http://twitter.com/TheStarFoundry"><img src="http://pbs.twimg.com/profile_images/491813564655476736/Y4BhriB0_normal.png"/> The Star Foundry</a>       
+<iframe style ="width: 300px; height: 20px;" src="//platform.twitter.com/widgets/follow_button.html?screen_name=TheStarFoundry&show_count=false" frameborder="0" scrolling="no"></iframe>       
+     </div>
+      <h5><small><p class="text-justify">
+	      Inspired by <a href="http://twitter.com/SachaGreif">@SachaGreif</a> &
+        built by <a href="http://twitter.com/thestarfoundry">@TheStarFoundry</a>
+      </p></small></h5>
+   </div>   
   </div>
 </template>
-
-
 
 <template name="user">
 	<table class="table">
 		<tr>
 		  <td>
 			<a target="blank" href="http://twitter.com/{{services.twitter.screenName}}"><img src="{{services.twitter.profile_image_url}}"/> {{profile.name}}</a>
-    
-	
    <iframe style ="width: 300px; height: 20px;" src="//platform.twitter.com/widgets/follow_button.html?screen_name={{services.twitter.screenName}}" frameborder="0" scrolling="no"></iframe>
-
- 
 		  </td>
 		</tr>
 	</table>
