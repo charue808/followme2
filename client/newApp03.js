@@ -2,6 +2,11 @@ Template.content.users = function() {
 	return Meteor.users.find();
 };
 
+Template.content.usercount = function() {
+  return Meteor.users.find().count();
+};
+
+
 window.twttr = (function (d, s, id) {
     var t, js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {
